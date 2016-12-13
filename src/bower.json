@@ -1,0 +1,50 @@
+{
+  "name": "Sprteam",
+  "authors": [
+    "PhungHuynhAthena <phung.dao@weareathena.com>"
+  ],
+  "description": "Sprteam hello world",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "",
+    "font-awesome": "",
+    "bourbon": "",
+    "neat": "",
+    "animate.css": ""
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "./dist/css/bootstrap.min.css",
+        "./dist/css/bootstrap-theme.min.css",
+        "./dist/js/bootstrap.min.js",
+        "./dist/fonts/glyphicons-halflings-regular.*"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "./css/font-awesome.min.css",
+        "./fonts/fontawesome-webfont.*"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "./dist/jquery.min.js"
+      ]
+    },
+    "animate.css": {
+      "main": [
+        "./animate.min.css"
+      ]
+    }
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

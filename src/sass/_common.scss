@@ -1,0 +1,212 @@
+@import "grid-settings";
+
+$pageWidth: 1366px;
+
+$Asap: 'asap', $helvetica;
+
+$shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+$colorThreshold: 15%;
+$hoverOpacity: .75;
+$border: #dbd2c6;
+
+$black: #000000;
+$dark: #394245;
+$red: #ff1a41;
+$pink: #e33d6f;
+$pinkBold: #7a416b;
+$blue: #0072af;
+$gray: #f2efea;
+$grayBold: #f0ebe4;
+$orange: #c24840;
+$white: #ffffff;
+$green: #a0c045;
+
+* { outline: none; }
+
+html { height: 100%; }
+html, body { min-height: 100%; width: 100%; max-width: 100%; margin: 0 auto; overflow-x: hidden; }
+
+body { -webkit-font-smoothing: antialiased; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); color: $dark;
+    font-size: 14px; font-family: $Asap; position: relative;
+    &.modal { overflow: hidden; height: 100%;}
+}
+
+a { display: inline-block; cursor: pointer; color: $blue;
+    &:hover { color: darken($pink, 30%);} 
+}
+
+button { background: none; border: none; padding: 0;}
+
+table { width: 100%;}
+
+.half { width: 50%; float: left;
+    @include media($mobile) { width: 100%;}
+}
+.clear { clear: both; @include clearfix;}
+.left { float: left;}
+.right { float: right;}
+
+.image-responsive { display: block;
+    a { width: 100%; display: block;}
+    img { width: 100%; height: auto; display: block;}
+}
+
+.visible-tablet { display: none;
+    @include media($tablet) { display: inline-block;}
+}
+.visible-phone { display: none;
+    @include media($mobile) { display: inline-block;}
+}
+
+.hidden-tablet {
+    @include media($tablet) { display: none !important;}
+}
+.hidden-phone {
+    @include media($mobile) { display: none !important;}
+}
+
+.text-center { text-align: center;}
+.text-left { text-align: left;}
+.text-right { text-align: right;}
+
+nav {
+    ul { margin: 0; padding: 0;
+        li { display: inline-block;
+            a { display: inline-block;}
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 { margin-top: 20px; font-weight: normal; }
+input[type="search"] { border-radius: 0;}
+
+sup { font-size: 50%; top: -1em;}
+
+.close-btn, .toggle-single, .toggle-button, .toggle-select, .btn { cursor: pointer; @include user-select(none);}
+.toggleable { display: none;
+    &.active { display: block;}
+}
+
+.container { position: relative; @include clearfix; margin-left: auto!important; margin-right: auto!important; max-width: $pageWidth; padding: 0 15px;
+    //overflow: hidden;
+    @media (min-width: 1200px){ max-width: 1205px; width: 1205px; }
+    @include media ($tablet)  {
+        &.none-padding-tablet{ padding: 0 }
+    }
+    @include media ($tabletOnly){ width: 100%; }
+    @include media ($mobile)  { padding-left: 0; padding-right: 0; }
+}
+
+
+.btn { padding: 5px 10px; position: relative; border-radius: 3px; color: white; font-weight: 600; border: none; outline: none;
+    box-shadow: none; text-shadow: none;
+    //&:hover { color: white;}
+    .icon { margin-left: 5px;
+        &.icon-left { margin-left: 0; margin-right: 5px;}
+    }
+}
+
+.btn-icon { padding-right: 40px;
+    .icons { position: absolute; top: 0; right: 0; width: 30px; height: 100%;
+        .icon { position: absolute; top: 50%; left: 50%; @include transform(translate(-50%, -50%)); margin-left: 0;}
+    }
+}
+
+.btn-danger { background: $red; box-shadow: 0 1px #d10024;
+    &:hover { background: #F16565; }
+    &:active { background: #F16565; }
+    
+    .icons { background: #f0193e;}
+}
+
+.btn-primary { background: $pink;
+    box-shadow: 0 1px #6e0f40;
+    &:hover { background: #BF4584; }
+    &:active { background: #BF4584; }
+}
+
+.btn-info { background: white; box-shadow: 0 1px rgba(0, 0, 0, 0.15); color: $pink;
+    &:hover { box-shadow: 0 2px rgba(0, 0, 0, 0.15); top: 1px; color: $pink;}
+    &:active { box-shadow: 0 1px rgba(0, 0, 0, 0.15); top: 2px;}
+}
+
+.btn-default { background: $blue; font: 400 12px/16px $Asap;
+    &:hover { background: #1A88C3!important; background-color: #1A88C3; color: #ffffff!important; }
+    &:active { background: #1A88C3!important; background-color: #1A88C3; color: #ffffff!important; }
+}
+
+.btn-success { background: #a0c045;
+    box-shadow: 0 1px #6f8f16;
+    &:hover {  background: #A9CE42; }
+    &:active { background: #A9CE42; }
+}
+
+.btn-orange { background: #c24840; box-shadow: 0 3px #ac2c23;
+    &:hover { box-shadow: 0 2px #ac2c23; top: 1px;}
+    &:active { box-shadow: 0 1px #ac2c23; top: 2px;}
+}
+
+.btn-white { background: none; border: 1px solid $white; }
+
+.red { color: $red;}
+.pink { color: $pink;}
+.blue { color: $blue;}
+.white { color: $white;}
+.green { color: $green; }
+.black { color: $black; }
+
+.nav-pink {
+    .owl-controls { .owl-dot.active { box-shadow: inset 0 0 0 13px $pink } }
+}
+.hide-olw-navs {
+    .owl-controls { .owl-nav { display: none; } }
+}
+
+#{$all-text-inputs}, select, textarea { background: white; width: 100%; height: 35px; padding: 5px 10px; border: none; @include appearance(none);
+    border-radius: 0; color: #706c67;}
+
+textarea { height: 125px;}
+
+.select { position: relative; text-align: left;
+    &:after { content: ''; position: absolute; top: 12px; right: 5px; background-image: url("../img/icons/icon-arrow-down-pink.svg"); height: 8px;
+        width: 13px; z-index: 1;}
+    &.active {
+        &:after { @include transform(rotateZ(180deg));}
+        .select-dropdown { display: block;}
+    }
+
+    select { display: none;}
+    
+    .select-current { height: 35px; width: 100%; background: white; padding: 7px 25px 7px 10px; cursor: pointer; color: $blue }
+    
+    .select-dropdown { position: absolute; top: 100%; left: 0; white-space: nowrap; min-width: 100%; background: white; 
+        padding: 7px 0; z-index: 100; display: none; box-shadow: $shadow;
+        .select-item { padding: 7px 10px; cursor: pointer; color: $blue }
+    }
+}
+
+.checkbox {
+    input { display: none;}
+
+    label { padding-right: 25px; position: relative; @include user-select(none); cursor: pointer; margin: 5px 0; display: inline-block;
+        &:before { content: ''; width: 20px; height: 20px; background: white; position: absolute; top: 0; right: 0;}
+        &:after { content: ''; width: 16px; height: 16px; position: absolute; top: 2px; right: 2px; opacity: 0; background: $pink;}
+    }
+
+    input:checked + label {
+        &:after { opacity: 1;}
+    }
+}
+
+.radio {
+    input { display: none;}
+
+    label { padding-left: 25px; position: relative; @include user-select(none); cursor: pointer; margin: 5px 0; display: inline-block;
+        &:before { content: ''; width: 16px; height: 16px; position: absolute; top: 0; left: 0; border-radius: 100%; border: 2px solid $blue;}
+        &:after { content: ''; width: 12px; height: 12px; position: absolute; top: 4px; left: 4px; opacity: 0; border-radius: 100%; background: $blue; }
+    }
+
+    input:checked + label {
+        &:after { opacity: 1;}
+    }
+}

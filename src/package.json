@@ -1,0 +1,24 @@
+{
+  "name": "sprteam",
+  "version": "1.0.0",
+  "description": "Sprteam hello world",
+  "main": "index.js",
+  "dependencies": {
+    "jshint": ""
+  },
+  "devDependencies": {
+    "jshint" : "",
+    "gulp-jshint": "",
+    "gulp": "",
+    "gulp-sass": "",
+    "gulp-concat": "",
+    "gulp-uglify": "",
+    "gulp-rename": "",
+    "main-bower-files": ""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
