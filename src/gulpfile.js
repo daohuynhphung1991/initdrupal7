@@ -14,7 +14,7 @@ var mainBowerFiles = require('main-bower-files');
 gulp.task('bower', function () {
     return gulp.src(mainBowerFiles(), {
         base: 'bower_components'
-    }).pipe(gulp.dest('../assets/vendor'));
+    }).pipe(gulp.dest('../sites/all/themes/sprt/assets/vendor'));
 });
 
 // Lint Task
@@ -28,7 +28,7 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('./sass/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('../assets/css'));
+        .pipe(gulp.dest('../sites/all/themes/sprt/assets/css'));
 });
 gulp.task('sass-style', function() {
     return gulp.src('./style.scss')
@@ -40,7 +40,7 @@ gulp.task('sass-style', function() {
 gulp.task('scripts', function() {
     return gulp.src('./js/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('../assets/js'));
+        .pipe(gulp.dest('../sites/all/themes/sprt/assets/js'));
 });
 
 // Default Task

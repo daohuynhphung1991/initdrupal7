@@ -63,6 +63,9 @@ stylesheets[all][] = css/app.css
 ;scripts[] = js/foundation/foundation.section.js
 ;scripts[] = js/foundation/foundation.tooltips.js
 ;scripts[] = js/foundation/foundation.topbar.js
+scripts[] = assets/vendor/jquery/dist/jquery.min.js
+scripts[] = assets/vendor/bootstrap/dist/js/bootstrap.min.js
+scripts[] = assets/js/style.js
 
 ; Theme scripts.
 ; This file is empty, just uncomment this line and start editing!
